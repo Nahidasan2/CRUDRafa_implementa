@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submitbox{
+    background-color: aqua;
+    width: 300px;
+    height: 380px;
+}
+h1 {
+    text-align: center;
+}
+.submitbox label{
+    margin-left: 10px;
+}
+.submitbox input{
+    background: transparent;
+}
+.submitbox textarea{
+    background: transparent;
+}
+.submitbox .btnregis{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+}
