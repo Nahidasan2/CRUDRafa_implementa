@@ -41,6 +41,13 @@ if(isset($_POST['btntambahkota'])){
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.bootstrap5.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.css">
 </head>
 <body>
     <div class="mt-2 ms-2">
@@ -57,13 +64,16 @@ if(isset($_POST['btntambahkota'])){
         </form>
         <?php endif ?>
     </div>
-    <div>
+    <div style="width: 90%;" class="ms-5">
     <!-- <h1 style="text-align:center;">Kota</h1> -->
-    <table border="1" class="table table-striped table-bordered border-dark mt-2">
+    <table id="tablekota" border="1" class="table table-striped table-bordered border-dark mt-2">
+        <thead>
         <tr>
             <th style="text-align:center;">Kota</th>
-            <!-- <th style="text-align:center">Action</th> -->
+            <th style="text-align:center">Action</th>
         </tr>
+        </thead>
+        <tbody>
         <?php
         include_once('koneksi.php');
 
@@ -82,10 +92,15 @@ if(isset($_POST['btntambahkota'])){
             </td>
         </tr>
         <?php } ?>
-        
+        </tbody>
     </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <script type="text/javascript" src="../asset/tilt.js/vanilla-tilt.js"></script> -->
+    <script>
+        new DataTable('#tablekota');
+    </script>
 </body>
 </html>
 <?php
