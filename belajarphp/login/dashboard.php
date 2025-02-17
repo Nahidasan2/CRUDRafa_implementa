@@ -1,5 +1,4 @@
 <?php
-include('../asset/navbar.php');
 include('../asset/koneksi.php');
 session_start();
 
@@ -36,69 +35,23 @@ $permissions = explode(',', $_SESSION['user']['izin']);
         .table {
         place-items: center;
         }
+        .content {
+            margin-left: 148px; /* Geser dashboard ke kanan */
+    /* padding: 20px; Tambahkan padding agar lebih rapi */
+}
     </style>
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary">
-        <div class="btnall">
-            <!-- <a class="btn btn-primary" href="../asset/create.php">Add</a> -->
-            <!-- <div class="atas">
-                <h1>DATABASE</h1>
-            </div> -->
-            <div class="btn btn-success ms-1 p-1">
-            <div class="d-flex align-items-center">
-                <p class="m-0"><i class="bi bi-people-fill">:</i></p>
-                <?php
-                
-                $Qjumlahsiswa = "SELECT * FROM users";
-                $Rjumlahsiswa = mysqli_query($conn, $Qjumlahsiswa);
+<div class="d-flex">
+        <?php
+    include('../asset/navbar.php');
+    ?>
+    <div class="content">
+<div class="content flex-grow-1">
+    </div>
 
-                if($jumlahsiswa = mysqli_num_rows($Rjumlahsiswa)){
-                    echo '<p class="ms-1 m-0"> '.$jumlahsiswa.' </p>';
-                }
-                
-                ?>
-            </div>
-        </div>
-        <a>
-            <div class="btn btn-outline-primary ms-1 p-1">
-                <div class="d-flex align-items-center">
-                    <p class="m-0"><i class="bi bi-person-standing">:</i></p>
-                    <?php
-                    
-                    $Qjmllakilaki = "SELECT * FROM users WHERE jeniskelamin = 'laki-laki'";
-                    $Rjmllakilaki = mysqli_query($conn, $Qjmllakilaki);
-                    
-                    if($jmllakilaki = mysqli_num_rows($Rjmllakilaki)){
-                        echo '<p class="ms-1 m-0"> '.$jmllakilaki.' </p>';
-                    }
-                    
-                    ?>
-                </div>
-            </div>
-        </a>
-        <a>
-            <div class="btn btn-outline-danger ms-1 p-1">
-                <div class="d-flex align-items-center">
-                    <p class="m-0"><i class="bi bi-person-standing-dress">:</i></p>
-                    <?php
-                    
-                    $Qjmllakilaki = "SELECT * FROM users WHERE jeniskelamin = 'perempuan'";
-                    $Rjmllakilaki = mysqli_query($conn, $Qjmllakilaki);
-                    
-                    if($jmllakilaki = mysqli_num_rows($Rjmllakilaki)){
-                        echo '<p class="ms-1 m-0"> '.$jmllakilaki.' </p>';
-                    }
-                    
-                    ?>
-                </div>
-            </div>
-        </a>
-        <!-- <a class="btn btn-primary" aria-current="page" href="../asset/create.php">Tambah</a> -->
-        </div>
-    </nav>
-    <hr>
-    <div class="table">
+    <!-- table -->
+    <div class="table gap-3">
         <h2>Data Siswa :</h2>
         <div class="filter container-fluid" style="display : flex;">
             <form method="GET" action="" class="d-flex align-items-center gap-3 container-fluid" style="white-space: nowrap;">
@@ -172,7 +125,7 @@ $permissions = explode(',', $_SESSION['user']['izin']);
                 <th>Alamat</th>
                 <th>Agama</th>
                 <?php if($role == 'admin'): ?>
-                <th colspan="3">Action</th>
+                <th colspan="3" style="text-align: center;">Action</th>
                 <?php endif ?>
             </tr>
         </thead>
@@ -251,7 +204,8 @@ $permissions = explode(',', $_SESSION['user']['izin']);
         </tbody>
         </table>
     </div>
-
+</div>
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="../asset/tilt.js/vanilla-tilt.js"></script>
     <script>

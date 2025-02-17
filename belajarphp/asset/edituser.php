@@ -64,8 +64,8 @@ if (isset($_GET['id'])){
                         <input type="text" name="nama" id="nama" class="form-control" autocomplete="off" value="<?php echo $username; ?>" required><br>
                     </div>
                     <div class="col-3 ms-5">
-                    <label for="jurusan" class="form-label">Kelas :</label>
-                        <select name="jurusan" id="jurusan" class="form-select" required>
+                    <label for="kelas" class="form-label">Kelas :</label>
+                        <select name="kelas" id="kelas" class="form-select" required>
                             <option value="10" <?php if ($kelas == "10") echo "selected"; ?>>10</option>
                             <option value="11" <?php if ($kelas == "11") echo "selected"; ?>>11</option>
                             <option value="12" <?php if ($kelas == "12") echo "selected"; ?>>12</option>
